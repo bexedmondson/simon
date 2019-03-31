@@ -133,6 +133,8 @@ public class ScreenManagerInspector : Editor
     {
         serializedObject.Update();
 
+		EditorGUILayout.PropertyField( serializedObject.FindProperty( "initialScreenType" ) );
+
         ScreenListInspector.ShowList( serializedObject.FindProperty( "screenTypePairs" ) );
 
         serializedObject.ApplyModifiedProperties();

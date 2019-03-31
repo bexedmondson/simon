@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScreenManager : MonoBehaviour 
 {
 	[System.Serializable]
-	class ScreenTypePair
+	public class ScreenTypePair
 	{
 		[SerializeField]
 		private ScreenType type;

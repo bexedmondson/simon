@@ -12,6 +12,10 @@ public class ScreenManager : MonoBehaviour
 
 		[SerializeField]
 		private Screen screenObject;
+
+		public GameObject ScreenObject { get { return screenObject.gameObject; } }
+
+		public ScreenType ScreenType { get { return type; } }
 	}
 
 	[SerializeField]
@@ -29,4 +33,12 @@ public class ScreenManager : MonoBehaviour
 
         DontDestroyOnLoad( gameObject );
     }
+
+	public void SwitchToScreen( ScreenType screenTypeToSwitchTo )
+	{
+		foreach( ScreenTypePair screen in screenTypePairs )
+		{
+			screen.ScreenObject.SetActive( screen.ScreenType == screenTypeToSwitchTo );
+		}
+	}
 }

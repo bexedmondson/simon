@@ -15,6 +15,7 @@ public class ScreenManagerInspector : Editor
 
 		public static void ShowList( SerializedProperty list )
         {
+			//Saving the list so we can later check whether any ScreenTypes are occurring more than once.
 			typePairList = list;
 			
 			EditorGUILayout.PropertyField( list );
@@ -23,6 +24,8 @@ public class ScreenManagerInspector : Editor
 			{            
 				EditorGUILayout.PropertyField( list.FindPropertyRelative( "Array.size" ) );
 
+                //This keeps a list of bools that keep track of which ScreenTypePair list items are expanded.
+				//Here, we're adjusting the length of the bool list to match the ScreenTypePair list length.
 				if( list.arraySize > expansionBoolList.Count )
 				{
 					int sizeBoolListStartedAs = expansionBoolList.Count;
@@ -52,6 +55,7 @@ public class ScreenManagerInspector : Editor
             SerializedProperty screenType = pair.FindPropertyRelative( "type" );
             SerializedProperty screenObject = pair.FindPropertyRelative( "screenObject" );
 
+            //Edit the label of the foldout item to reflect its contents.
             string foldoutName = "";
 
             if( screenType == null || screenType.objectReferenceValue == null )
@@ -61,6 +65,7 @@ public class ScreenManagerInspector : Editor
 
             if( screenObject == null || screenObject.objectReferenceValue == null )
                 foldoutName += " - No ScreenObject Assigned!";
+
 
             bool expandedToReturn = EditorGUILayout.Foldout( expanded, foldoutName );
 
@@ -79,11 +84,13 @@ public class ScreenManagerInspector : Editor
                 EditorGUILayout.PropertyField( screenType, GUIContent.none );
                 if( EditorGUI.EndChangeCheck() )
                 {
+					//If the screen type is already in the list elsewhere, undo the change and show a dialog to explain why.
 					if( IsScreenTypeAlreadyInList( screenType ) )
 					{
 						screenType.objectReferenceValue = previousScreenTypeObject;
-						EditorUtility.DisplayDialog( "Can't add this ScreenType!", "This screen type is already beign used elsewhere. Please make another screen type (Create>Screen Type) or change this to an unused screen type.", "OK" );
-						//Debug.LogWarning( "Cannot add this screen type - it's already being used for another list!" );
+						EditorUtility.DisplayDialog( "Can't add this ScreenType!", 
+						                            "This screen type is already being used elsewhere. Please make another screen type (Create>Screen Type) or change this to an unused screen type.", 
+						                            "OK" );
 					}
                 }
 
@@ -115,7 +122,7 @@ public class ScreenManagerInspector : Editor
 				}
 			}
 
-            //if it's in the list more than once, the screen type is being used somewhere other than the place it's just been entered
+            //If it's in the list more than once, the screen type is being used somewhere other than the place it's just been entered.
 			return ( numOfTimesTypeIsInList > 1 );
 		}
     }

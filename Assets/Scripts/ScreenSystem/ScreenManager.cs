@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ScreenManager : MonoBehaviour 
 {
@@ -19,6 +20,9 @@ public class ScreenManager : MonoBehaviour
 	}
 
 	[SerializeField]
+	private ScreenType initialScreenType;
+
+	[SerializeField]
 	private List<ScreenTypePair> screenTypePairs = new List<ScreenTypePair> { };
 
 	private static ScreenManager instance = null;
@@ -33,12 +37,24 @@ public class ScreenManager : MonoBehaviour
 
         DontDestroyOnLoad( gameObject );
     }
+    
+	private void Start()
+	{
+		SwitchToScreen( initialScreenType );
+	}
 
 	public void SwitchToScreen( ScreenType screenTypeToSwitchTo )
 	{
-		foreach( ScreenTypePair screen in screenTypePairs )
+		if( screenTypePairs.Any( screen => screen.ScreenType == screenTypeToSwitchTo ) )
 		{
-			screen.ScreenObject.SetActive( screen.ScreenType == screenTypeToSwitchTo );
+			foreach( ScreenTypePair screen in screenTypePairs )
+			{
+				screen.ScreenObject.SetActive( screen.ScreenType == screenTypeToSwitchTo );
+			}
+		}
+		else
+		{
+			Debug.LogError( "Trying to switch to a screen type '" + screenTypeToSwitchTo.name + "' that doesn't exist in ScreenManager's list!" );
 		}
 	}
 }

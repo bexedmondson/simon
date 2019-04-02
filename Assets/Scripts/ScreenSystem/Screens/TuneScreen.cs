@@ -6,7 +6,11 @@ using UnityEngine;
 // entirely built in UI so I'm putting more logic in this script than I usually would.
 public class TuneScreen : Screen 
 {
-	private List<int> sequenceInProgress = new List<int> { };
+	[SerializeField]
+	private NoteList listOfAvailableNotes;
+
+	[SerializeField]
+	private NoteList sequenceInProgress;
 
 	[SerializeField]
 	private ScreenType gameplayScreenType;
@@ -21,14 +25,14 @@ public class TuneScreen : Screen
 
 	private void AddNote()
 	{
-		sequenceInProgress.Add( 0 );
+		sequenceInProgress.noteList.Add( listOfAvailableNotes.noteList[ Random.Range( 0, listOfAvailableNotes.noteList.Count ) ] );
 	}   
 
     private IEnumerator PlaySequence()
     {
         int i = 0;
 
-        while( i < sequenceInProgress.Count )
+		while( i < sequenceInProgress.noteList.Count )
         {
             PlayNote();
             i++;

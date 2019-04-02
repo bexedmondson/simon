@@ -12,6 +12,8 @@ public class StartScreen : Screen
 	private void OnEnable()
 	{
 		//Whenever this screen is shown, the sequence should be cleared
+        //This really should just be a failsafe - sequence should be cleared by Results screen,
+        //but in case the player exits halfway through or something, clearing here to be sure.
 		sequenceInProgress.noteList.Clear();
 	}
 }

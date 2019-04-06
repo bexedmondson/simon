@@ -12,6 +12,9 @@ public class TuneScreen : Screen
 	[SerializeField]
 	private List<NoteObject> noteObjects;
 
+	[SerializeField, Tooltip("This is a holder for the current song. Ignored if in random mode.")]
+	private NoteListReadonlyHolder currentSongHolder;
+
 	[SerializeField]
 	private ScreenType gameplayScreenType;
 
@@ -21,7 +24,7 @@ public class TuneScreen : Screen
 	private void OnEnable()
 	{
 		if( noteAdder == null )
-			noteAdder = new RandomNoteAdder();
+			noteAdder = new SongNoteAdder(currentSongHolder.noteList);
 
 		noteAdder.AddNote( sequenceInProgress );
 

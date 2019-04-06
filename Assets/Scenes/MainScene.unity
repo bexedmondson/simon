@@ -1994,6 +1994,7 @@ MonoBehaviour:
   - {fileID: 1485418244}
   - {fileID: 202158970}
   - {fileID: 1313802380}
+  currentSongHolder: {fileID: 11400000, guid: 349ead03e1c1b4b92aac9407204f423e, type: 2}
   gameplayScreenType: {fileID: 11400000, guid: 8c6a8e391cad148e2bfb70e377b13e1d, type: 2}
 --- !u!1 &482074092
 GameObject:
@@ -3167,6 +3168,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1504617665}
+        m_MethodName: OnSongSelected
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 1c2788fa5f38e4bf2970a832dcdf623c,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: NoteListReadonly, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 452817098}
         m_MethodName: SwitchToScreen
         m_Mode: 2
@@ -6002,6 +6015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceInProgress: {fileID: 11400000, guid: 4779c953d7eb54640b8be63c2ef8f2b9, type: 2}
+  currentSongHolder: {fileID: 11400000, guid: 349ead03e1c1b4b92aac9407204f423e, type: 2}
 --- !u!95 &1504617666
 Animator:
   serializedVersion: 3

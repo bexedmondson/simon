@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[CreateAssetMenu]
 public abstract class NoteListBase : ScriptableObject 
 {
+	[SerializeField]
 	protected List<Note> noteList;
 
 	public Note GetNoteAtIndex( int i )

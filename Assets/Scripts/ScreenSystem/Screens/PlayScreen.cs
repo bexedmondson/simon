@@ -35,8 +35,8 @@ public class PlayScreen : Screen
 			}
 			else
 			{
-				//If player succeeded and there aren't any notes left to play, go back to the tune screen for the next sequence.
-				ScreenManager.Get.SwitchToScreen( tuneScreenType );
+                //If player succeeded and there aren't any notes left to play, go back to the tune screen for the next sequence.
+				StartCoroutine( "SwitchToTuneScreen" );
 			}
 		}
 		else
@@ -44,5 +44,11 @@ public class PlayScreen : Screen
 			//If the player failed, switch to the result screen.
 			ScreenManager.Get.SwitchToScreen( resultScreenType );
 		}
+	}
+
+	private IEnumerator SwitchToTuneScreen()
+	{
+		yield return new WaitForSeconds( 2.0f );
+        ScreenManager.Get.SwitchToScreen( tuneScreenType );
 	}
 }

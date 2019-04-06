@@ -11,8 +11,17 @@ public class SongNoteAdder : NoteAdderBase
 		this.songNoteList = songNoteList;
 	}
 
-	public override void AddNote(NoteListEditable noteList)
+	public override SongFinishedState AddNote(NoteListEditable noteListEditable)
 	{
-		noteList.NoteList.Add( songNoteList.GetNoteAtIndex( noteList.NoteListCount ) );
+		if( noteListEditable.NoteListCount == songNoteList.NoteListCount )
+		{
+			return SongFinishedState.Finished;
+		}
+		else
+		{
+			noteListEditable.NoteList.Add( songNoteList.GetNoteAtIndex( noteListEditable.NoteListCount ) );
+			return SongFinishedState.NotFinished;
+		}
+
 	}
 }

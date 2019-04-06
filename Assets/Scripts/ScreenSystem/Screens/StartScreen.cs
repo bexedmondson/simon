@@ -12,6 +12,12 @@ public class StartScreen : Screen
 	[SerializeField, Tooltip("This is a holder for the current song. Ignored if in random mode.")]
     private NoteListReadonlyHolder currentSongHolder;
 
+	[SerializeField]
+	private GameMode gameMode;
+
+	[SerializeField]
+	private ScreenType tuneScreenType;   
+
 	private void OnEnable()
 	{
 		//Whenever this screen is shown, the sequence should be cleared
@@ -20,8 +26,18 @@ public class StartScreen : Screen
 		sequenceInProgress.NoteList.Clear();
 	}
 
+	public void OnRandomStartSelected()
+	{
+		gameMode.currentGameMode = GameMode.GameModeType.Random;
+
+		ScreenManager.Get.SwitchToScreen( tuneScreenType );
+	}
+
 	public void OnSongSelected(NoteListReadonly song)
 	{
 		currentSongHolder.noteList = song;
+		gameMode.currentGameMode = GameMode.GameModeType.Song;      
+
+		ScreenManager.Get.SwitchToScreen( tuneScreenType );
 	}
 }

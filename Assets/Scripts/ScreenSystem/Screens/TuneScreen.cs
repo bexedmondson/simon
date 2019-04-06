@@ -5,7 +5,7 @@ using UnityEngine;
 // Note: In a normal project, I would separate UI and game logic, but this game is 
 // entirely built in UI so I'm putting more logic in this script than I usually would.
 public class TuneScreen : Screen 
-{
+{   
 	[SerializeField]
 	private NoteListEditable sequenceInProgress;
 
@@ -16,19 +16,50 @@ public class TuneScreen : Screen
 	private NoteListReadonlyHolder currentSongHolder;
 
 	[SerializeField]
+	private GameMode gameMode;
+
+	[SerializeField]
 	private ScreenType gameplayScreenType;
+
+	[SerializeField]
+	private ScreenType resultScreenType;
 
 	private NoteAdderBase noteAdder;
 
 	//As soon as the screen manager switches to this screen, begin a sequence.
 	private void OnEnable()
 	{
-		if( noteAdder == null )
-			noteAdder = new SongNoteAdder(currentSongHolder.noteList);
+		switch( gameMode.currentGameMode )
+		{
+			case GameMode.GameModeType.Song:
+			{
+				if( !( noteAdder is SongNoteAdder ) )
+				{
+    				noteAdder = new SongNoteAdder( currentSongHolder.noteList );
+				}
+				break;
+			}
+			case GameMode.GameModeType.Random: //putting this in for clarity
+			default:
+			{
+				if( !( noteAdder is RandomNoteAdder ) )
+				{
+				    noteAdder = new RandomNoteAdder();
+				}
+				break;
+			}
+		}
 
-		noteAdder.AddNote( sequenceInProgress );
+		SongFinishedState isSongFinished = noteAdder.AddNote( sequenceInProgress );
 
-		StartCoroutine( "PlaySequence" );
+		if( isSongFinished == SongFinishedState.Finished )
+		{
+			ScreenManager.Get.SwitchToScreen( resultScreenType );
+		}
+		else
+		{
+			StartCoroutine( "PlaySequence" );
+		}
 	}
 
     private IEnumerator PlaySequence()

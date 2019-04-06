@@ -636,7 +636,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 871039192}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1043,7 +1043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &469449271
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,6 +1072,16 @@ MonoBehaviour:
   listOfAvailableNotes: {fileID: 11400000, guid: c080ac235256d4cf7a7a8a92460ffcb2,
     type: 2}
   sequenceInProgress: {fileID: 11400000, guid: 4779c953d7eb54640b8be63c2ef8f2b9, type: 2}
+  noteObjects:
+  - {fileID: 1663971748}
+  - {fileID: 331875101}
+  - {fileID: 918636599}
+  - {fileID: 589628156}
+  - {fileID: 1487210106}
+  - {fileID: 643852679}
+  - {fileID: 1485418244}
+  - {fileID: 202158970}
+  - {fileID: 1313802380}
   gameplayScreenType: {fileID: 11400000, guid: 8c6a8e391cad148e2bfb70e377b13e1d, type: 2}
 --- !u!1 &571268070
 GameObject:
@@ -1929,8 +1939,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 331875098}
   - {fileID: 1663971745}
+  - {fileID: 331875098}
   - {fileID: 918636596}
   - {fileID: 589628153}
   - {fileID: 1487210103}
@@ -3668,7 +3678,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 871039192}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}

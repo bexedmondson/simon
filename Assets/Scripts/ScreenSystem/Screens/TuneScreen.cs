@@ -13,6 +13,9 @@ public class TuneScreen : Screen
 	private NoteList sequenceInProgress;
 
 	[SerializeField]
+	private List<NoteObject> noteObjects;
+
+	[SerializeField]
 	private ScreenType gameplayScreenType;
 
 	//As soon as the screen manager switches to this screen, begin a sequence.
@@ -34,15 +37,26 @@ public class TuneScreen : Screen
 
 		while( i < sequenceInProgress.noteList.Count )
         {
-            PlayNote();
+			PlayNote(sequenceInProgress.noteList[i]);
             i++;
             yield return new WaitForSeconds( 1.0f );
         }
 
 		ScreenManager.Get.SwitchToScreen( gameplayScreenType );
     }
-
-	private void PlayNote()
+    
+	private void PlayNote(Note note)
 	{
+		NoteObject noteObjectToPlay = noteObjects.Find( noteObject => noteObject.Note == note );
+
+		if( noteObjectToPlay == null )
+		{
+			Debug.LogError( "No note object found for note " + note.ToString() + "!" );
+			return;
+		}
+		else
+		{
+			noteObjectToPlay.Play();
+		}
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class NoteList : ScriptableObject 
+public class NoteListEditable : NoteListBase 
 {
-	public List<Note> noteList;
+	public List<Note> NoteList { get { return noteList; } }
 }

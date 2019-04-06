@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayScreen : Screen 
 {
 	[SerializeField]
-	private NoteList sequenceToTestAgainst;
+	private NoteListEditable sequenceToTestAgainst;
 
 	[SerializeField]
 	private ScreenType tuneScreenType;
@@ -25,10 +25,10 @@ public class PlayScreen : Screen
 	{
 		noteObjectPlayed.Play( NoteObject.NotePlayType.Player );
 
-		if( noteObjectPlayed.Note == sequenceToTestAgainst.noteList[ noteIndex ] )
+		if( noteObjectPlayed.Note == sequenceToTestAgainst.GetNoteAtIndex( noteIndex ) )
 		{
 			//If player succeeded and there are still notes to play, wait for next note.
-			if( noteIndex != sequenceToTestAgainst.noteList.Count - 1 )
+			if( noteIndex != sequenceToTestAgainst.NoteListCount - 1 )
 			{
 				noteIndex++;
 				return;

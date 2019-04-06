@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ResultScreen : Screen
 {
 	[SerializeField]
-	private NoteList sequenceJustPlayed;
+	private NoteListEditable sequenceJustPlayed;
 
 	[SerializeField]
 	private Text resultNumberText;
@@ -14,7 +14,7 @@ public class ResultScreen : Screen
 	private void OnEnable()
 	{
 		//When this screen is transitioned to, display the length of the sequence they successfully completed.
-		resultNumberText.text = ( sequenceJustPlayed.noteList.Count - 1 ).ToString();
+		resultNumberText.text = ( sequenceJustPlayed.NoteListCount - 1 ).ToString();
 	}
 
 	public void ExitGame()

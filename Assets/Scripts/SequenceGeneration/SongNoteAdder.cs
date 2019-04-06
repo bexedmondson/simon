@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SongNoteAdder : NoteAdderBase 
 {
-	public override void AddNote(List<Note> noteList)
+	public override void AddNote(NoteListEditable noteList)
 	{
 		//return Note.C4;
 	}

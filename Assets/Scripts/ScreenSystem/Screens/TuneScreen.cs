@@ -7,7 +7,7 @@ using UnityEngine;
 public class TuneScreen : Screen 
 {
 	[SerializeField]
-	private NoteList sequenceInProgress;
+	private NoteListEditable sequenceInProgress;
 
 	[SerializeField]
 	private List<NoteObject> noteObjects;
@@ -23,7 +23,7 @@ public class TuneScreen : Screen
 		if( noteAdder == null )
 			noteAdder = new RandomNoteAdder();
 
-		noteAdder.AddNote( sequenceInProgress.noteList );
+		noteAdder.AddNote( sequenceInProgress );
 
 		StartCoroutine( "PlaySequence" );
 	}
@@ -34,10 +34,10 @@ public class TuneScreen : Screen
 		yield return new WaitForSeconds( 0.5f );
 
         int i = 0;
-
-		while( i < sequenceInProgress.noteList.Count )
+        
+		while( i < sequenceInProgress.NoteListCount )
         {
-			PlayNote(sequenceInProgress.noteList[i]);
+			PlayNote( sequenceInProgress.GetNoteAtIndex(i) );
             i++;
             yield return new WaitForSeconds( 1.0f );
         }

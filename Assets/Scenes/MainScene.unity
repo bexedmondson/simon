@@ -1983,8 +1983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc66b2dc2e2d14daf83de164eea4321f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfAvailableNotes: {fileID: 11400000, guid: c080ac235256d4cf7a7a8a92460ffcb2,
-    type: 2}
   sequenceInProgress: {fileID: 11400000, guid: 4779c953d7eb54640b8be63c2ef8f2b9, type: 2}
   noteObjects:
   - {fileID: 1663971748}

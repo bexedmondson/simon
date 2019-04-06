@@ -85,10 +85,14 @@ public class ScreenManager : MonoBehaviour
 
             //If the outScreen has an Animator, and if the animator has a trigger called "TransitionOut", trigger it and wait for it to end.
 			if( outAnimator != null && outAnimator.parameters.Any( parameter => parameter.name == "TransitionOut" ) )
-			{
+			{            
 				outAnimator.SetTrigger( "TransitionOut" );
 
-				yield return new WaitUntil( () => outAnimator.GetCurrentAnimatorStateInfo( 0 ).normalizedTime < 1.0f );
+				//Wait a frame here for the animator to follow the trigger and start the animation.
+				yield return null;
+
+                //Wait until animation is done.
+				yield return new WaitUntil( () => outAnimator.GetCurrentAnimatorStateInfo( 0 ).normalizedTime > 1.0f );
 			}
 
 			outScreen.gameObject.SetActive( false );

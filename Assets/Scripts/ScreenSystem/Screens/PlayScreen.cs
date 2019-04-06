@@ -21,8 +21,10 @@ public class PlayScreen : Screen
 		noteIndex = 0;
 	}
 
-	public void NotePlayed(NoteObject noteObjectPlayed)
+	public void OnNotePlayed(NoteObject noteObjectPlayed)
 	{
+		noteObjectPlayed.Play( NoteObject.NotePlayType.Player );
+
 		if( noteObjectPlayed.Note == sequenceToTestAgainst.noteList[ noteIndex ] )
 		{
 			//If player succeeded and there are still notes to play, wait for next note.

@@ -6,6 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class NoteObject : MonoBehaviour 
 {
+	public enum NotePlayType
+	{
+		Sequence,
+        Player,
+	}
+
 	[SerializeField]
 	private Note note;
 
@@ -21,9 +27,17 @@ public class NoteObject : MonoBehaviour
 		audioSource = GetComponent<AudioSource>();
 	}
 
-	public void Play()
+	public void Play(NotePlayType notePlayType)
 	{
-		animator.SetTrigger( "Play" );
+		if( notePlayType == NotePlayType.Player )
+		{
+			animator.SetTrigger( "PlayPlayer" );
+		}
+		else if( notePlayType == NotePlayType.Sequence )
+		{
+			animator.SetTrigger( "PlaySequence" );
+		}
+
 		audioSource.PlayOneShot( audioSource.clip );
 	}
 }

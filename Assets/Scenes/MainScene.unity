@@ -261,7 +261,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 25863067}
@@ -511,7 +511,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 95415240}
@@ -747,7 +747,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -770,7 +770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 201097991}
@@ -2507,7 +2507,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 639152639}
@@ -4154,7 +4154,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1234432667}
@@ -4404,7 +4404,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1235406545}
@@ -5975,7 +5975,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1660844397}
@@ -6629,7 +6629,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1748277394}
@@ -7023,7 +7023,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 354902952}
-        m_MethodName: NotePlayed
+        m_MethodName: OnNotePlayed
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2031338673}

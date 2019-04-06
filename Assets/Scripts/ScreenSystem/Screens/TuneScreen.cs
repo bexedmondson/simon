@@ -56,7 +56,7 @@ public class TuneScreen : Screen
 		}
 		else
 		{
-			noteObjectToPlay.Play();
+			noteObjectToPlay.Play(NoteObject.NotePlayType.Sequence);
 		}
 	}
 }

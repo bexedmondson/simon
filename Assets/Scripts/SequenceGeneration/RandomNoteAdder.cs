@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RandomNoteAdder : NoteAdderBase 
 {
-	public override Note AddNote()
+	public override void AddNote(List<Note> noteList)
 	{
 		System.Array allNotes = System.Enum.GetValues( typeof( Note ) );
         
-		return (Note) allNotes.GetValue( UnityEngine.Random.Range( 0, allNotes.Length ) );
+		noteList.Add( (Note) allNotes.GetValue( UnityEngine.Random.Range( 0, allNotes.Length ) ) );
 	}
 }

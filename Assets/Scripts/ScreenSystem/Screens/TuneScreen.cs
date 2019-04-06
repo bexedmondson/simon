@@ -23,15 +23,10 @@ public class TuneScreen : Screen
 		if( noteAdder == null )
 			noteAdder = new RandomNoteAdder();
 
-		sequenceInProgress.noteList.Add( noteAdder.AddNote() );
+		noteAdder.AddNote( sequenceInProgress.noteList );
 
 		StartCoroutine( "PlaySequence" );
 	}
-
-	/*private void AddNote()
-	{
-		sequenceInProgress.noteList.Add( listOfAvailableNotes.noteList[ Random.Range( 0, listOfAvailableNotes.noteList.Count ) ] );
-	}  */ 
 
     private IEnumerator PlaySequence()
     {

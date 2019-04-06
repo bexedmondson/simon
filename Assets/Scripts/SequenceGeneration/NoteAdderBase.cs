@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class NoteAdderBase 
 {
-	public abstract Note AddNote();
+	public abstract void AddNote(List<Note> noteList);
 }

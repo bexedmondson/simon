@@ -14,7 +14,7 @@ public class ScreenManager : MonoBehaviour
 		[SerializeField]
 		private Screen screenObject;
 
-		public GameObject ScreenObject { get { return screenObject.gameObject; } }
+		public Screen ScreenObject { get { return screenObject; } }
 
 		public ScreenType ScreenType { get { return type; } }
 	}
@@ -48,14 +48,63 @@ public class ScreenManager : MonoBehaviour
 	{
 		if( screenTypePairs.Any( screen => screen.ScreenType == screenTypeToSwitchTo ) )
 		{
+            Screen outScreen = null;
+            Screen inScreen = null;
+
 			foreach( ScreenTypePair screen in screenTypePairs )
+			{            
+				if( screen.ScreenObject.gameObject.activeInHierarchy && screen.ScreenType != screenTypeToSwitchTo )
+				{
+                    //Turn off any screens that are on and shouldn't be
+					outScreen = screen.ScreenObject;
+				}
+				else if( !screen.ScreenObject.gameObject.activeInHierarchy && screen.ScreenType == screenTypeToSwitchTo )
+				{
+					//Turn on any screens that aren't on and should be
+					inScreen = screen.ScreenObject;
+				}            
+			}
+
+			if( inScreen != null || outScreen != null )
 			{
-				screen.ScreenObject.SetActive( screen.ScreenType == screenTypeToSwitchTo );
+				StartCoroutine( WaitForTransitionOut( inScreen, outScreen ) );
 			}
 		}
 		else
 		{
 			Debug.LogError( "Trying to switch to a screen type '" + screenTypeToSwitchTo.name + "' that doesn't exist in ScreenManager's list!" );
+		}
+	}
+    
+	private IEnumerator WaitForTransitionOut(Screen inScreen, Screen outScreen)
+	{
+		//outScreen should be null during the initial transition in of the Start screen, so no else clause needed here
+		if( outScreen != null )
+		{
+			Animator outAnimator = outScreen.GetComponent<Animator>();
+
+            //If the outScreen has an Animator, and if the animator has a trigger called "TransitionOut", trigger it and wait for it to end.
+			if( outAnimator != null && outAnimator.parameters.Any( parameter => parameter.name == "TransitionOut" ) )
+			{            
+				outAnimator.SetTrigger( "TransitionOut" );
+
+				//Wait a frame here for the animator to follow the trigger and start the animation.
+				yield return null;
+
+                //Wait until animation is done.
+				yield return new WaitUntil( () => outAnimator.GetCurrentAnimatorStateInfo( 0 ).normalizedTime > 1.0f );
+			}
+
+			outScreen.gameObject.SetActive( false );
+		}
+
+		if( inScreen != null )
+		{
+			inScreen.gameObject.SetActive( true );
+		}
+		else
+		{
+			Debug.LogError( "Can't transition in a null screen! Transitioned out " + outScreen );
 		}
 	}
 }

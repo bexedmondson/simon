@@ -33,6 +33,9 @@ public class TuneScreen : Screen
 
     private IEnumerator PlaySequence()
     {
+		//Wait for a bit to give the player a moment to prepare.
+		yield return new WaitForSeconds( 0.5f );
+
         int i = 0;
 
 		while( i < sequenceInProgress.noteList.Count )

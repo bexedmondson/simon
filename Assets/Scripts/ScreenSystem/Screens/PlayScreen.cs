@@ -48,7 +48,7 @@ public class PlayScreen : Screen
 
 	private IEnumerator SwitchToTuneScreen()
 	{
-		yield return new WaitForSeconds( 2.0f );
+		yield return new WaitForSeconds( 1.0f );
         ScreenManager.Get.SwitchToScreen( tuneScreenType );
 	}
 }

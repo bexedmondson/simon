@@ -4225,9 +4225,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652842040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53331926c05254cb0a78ae0befd45652, type: 3}
+  m_Script: {fileID: 11500000, guid: 935187361e42a4d72ad4fd6466f685c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sequenceJustPlayed: {fileID: 11400000, guid: 4779c953d7eb54640b8be63c2ef8f2b9, type: 2}
+  resultNumberText: {fileID: 1014277897}
 --- !u!1 &1660844394
 GameObject:
   m_ObjectHideFlags: 0

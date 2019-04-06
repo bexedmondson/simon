@@ -24,8 +24,9 @@ public class ScreenManager : MonoBehaviour
 
 	[SerializeField]
 	private List<ScreenTypePair> screenTypePairs = new List<ScreenTypePair> { };
-
+    
 	private static ScreenManager instance = null;
+	public static ScreenManager Get { get { return instance; } }
     
 	void Awake()
     {

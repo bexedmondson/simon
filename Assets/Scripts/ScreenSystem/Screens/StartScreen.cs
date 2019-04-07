@@ -7,13 +7,37 @@ using UnityEngine;
 public class StartScreen : Screen 
 {
 	[SerializeField]
-	private NoteList sequenceInProgress;
+	private NoteListEditable sequenceInProgress;
+
+	[SerializeField, Tooltip("This is a holder for the current song. Ignored if in random mode.")]
+    private NoteListReadonlyHolder currentSongHolder;
+
+	[SerializeField]
+	private GameMode gameMode;
+
+	[SerializeField]
+	private ScreenType tuneScreenType;   
 
 	private void OnEnable()
 	{
 		//Whenever this screen is shown, the sequence should be cleared
         //This really should just be a failsafe - sequence should be cleared by Results screen,
         //but in case the player exits halfway through or something, clearing here to be sure.
-		sequenceInProgress.noteList.Clear();
+		sequenceInProgress.NoteList.Clear();
+	}
+
+	public void OnRandomStartSelected()
+	{
+		gameMode.currentGameMode = GameMode.GameModeType.Random;
+
+		ScreenManager.Get.SwitchToScreen( tuneScreenType );
+	}
+
+	public void OnSongSelected(NoteListReadonly song)
+	{
+		currentSongHolder.noteList = song;
+		gameMode.currentGameMode = GameMode.GameModeType.Song;      
+
+		ScreenManager.Get.SwitchToScreen( tuneScreenType );
 	}
 }

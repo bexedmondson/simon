@@ -8,6 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614485ca90d1f42cd82d39beb18ededb, type: 3}
-  m_Name: CurrentSequence
+  m_Script: {fileID: 11500000, guid: 721bfeb8d05c84dafaae3cbce6a4c248, type: 3}
+  m_Name: SongHolder
   m_EditorClassIdentifier: 
+  noteList: {fileID: 0}

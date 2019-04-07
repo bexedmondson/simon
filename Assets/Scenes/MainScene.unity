@@ -1901,6 +1901,7 @@ GameObject:
   - component: {fileID: 294855602}
   - component: {fileID: 294855601}
   - component: {fileID: 294855600}
+  - component: {fileID: 294855603}
   m_Layer: 5
   m_Name: MediumButton
   m_TagString: Untagged
@@ -1966,8 +1967,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnRandomStartSelected
+      - m_Target: {fileID: 294855603}
+        m_MethodName: OnSelectDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2013,6 +2014,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 294855598}
   m_CullTransparentMesh: 0
+--- !u!114 &294855603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294855598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbcd818c57634efea59e7477ddcc0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608, type: 2}
+  difficultySetting: {fileID: 11400000, guid: 18843898e83dc461f9aa71c526037dd6, type: 2}
 --- !u!1 &295786433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5770,6 +5784,7 @@ GameObject:
   - component: {fileID: 1045759110}
   - component: {fileID: 1045759109}
   - component: {fileID: 1045759108}
+  - component: {fileID: 1045759111}
   m_Layer: 5
   m_Name: HardButton
   m_TagString: Untagged
@@ -5835,8 +5850,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnRandomStartSelected
+      - m_Target: {fileID: 1045759111}
+        m_MethodName: OnSelectDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5882,6 +5897,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1045759106}
   m_CullTransparentMesh: 0
+--- !u!114 &1045759111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045759106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbcd818c57634efea59e7477ddcc0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608, type: 2}
+  difficultySetting: {fileID: 11400000, guid: e87f63070a4264aa7b24cb67a752509c, type: 2}
 --- !u!1 &1051880514
 GameObject:
   m_ObjectHideFlags: 0
@@ -6037,6 +6065,7 @@ GameObject:
   - component: {fileID: 1118607360}
   - component: {fileID: 1118607359}
   - component: {fileID: 1118607358}
+  - component: {fileID: 1118607357}
   m_Layer: 5
   m_Name: EasyButton
   m_TagString: Untagged
@@ -6063,6 +6092,19 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: -30}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1118607357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118607355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbcd818c57634efea59e7477ddcc0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608, type: 2}
+  difficultySetting: {fileID: 11400000, guid: 0da78a447124e4df69ba1a5613c2657c, type: 2}
 --- !u!114 &1118607358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6102,8 +6144,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnRandomStartSelected
+      - m_Target: {fileID: 1118607357}
+        m_MethodName: OnSelectDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

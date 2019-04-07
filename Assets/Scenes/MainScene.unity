@@ -4204,7 +4204,7 @@ MonoBehaviour:
         m_MethodName: OnSongSelected
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0d6ee256bbfaf4f1e95537bb4aaf53e0,
+          m_ObjectArgument: {fileID: 11400000, guid: 0bdcc100034ab40d08042fab0aee44fe,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: NoteListReadonly, Assembly-CSharp
           m_IntArgument: 0
@@ -4905,7 +4905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Game (Old McD)
+  m_Text: Start Game (Jingle Bells)
 --- !u!222 &1189696058
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -17,12 +17,17 @@ public class DifficultyButton : MonoBehaviour
 
 	public void OnEnable()
 	{
-		tick.gameObject.SetActive( settingHolder.setting == difficultySetting );
+		UpdateCheckmark();
 	}
 
 	public void OnSelectDifficulty()
 	{
 		settingHolder.setting = difficultySetting;
-		tick.gameObject.SetActive( true );
+		UpdateCheckmark();
+	}
+    
+	public void UpdateCheckmark()
+	{
+		tick.gameObject.SetActive( settingHolder.setting == difficultySetting );
 	}
 }

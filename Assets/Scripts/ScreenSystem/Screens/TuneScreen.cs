@@ -16,6 +16,9 @@ public class TuneScreen : Screen
 	private NoteListReadonlyHolder currentSongHolder;
 
 	[SerializeField]
+	private DifficultySettingHolder currentDifficultySettingHolder;
+    
+	[SerializeField]
 	private GameMode gameMode;
 
 	[SerializeField]
@@ -73,7 +76,8 @@ public class TuneScreen : Screen
         {
 			PlayNote( sequenceInProgress.GetNoteAtIndex(i) );
             i++;
-            yield return new WaitForSeconds( 1.0f );
+
+			yield return new WaitForSeconds( currentDifficultySettingHolder.setting.TimeBetweenNotes );
         }
 
 		ScreenManager.Get.SwitchToScreen( gameplayScreenType );

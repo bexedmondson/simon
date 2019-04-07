@@ -2761,6 +2761,8 @@ MonoBehaviour:
   - {fileID: 202158970}
   - {fileID: 1313802380}
   currentSongHolder: {fileID: 11400000, guid: 349ead03e1c1b4b92aac9407204f423e, type: 2}
+  currentDifficultySettingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608,
+    type: 2}
   gameMode: {fileID: 11400000, guid: ade6a28651d124df6a212c32e6998018, type: 2}
   gameplayScreenType: {fileID: 11400000, guid: 8c6a8e391cad148e2bfb70e377b13e1d, type: 2}
   resultScreenType: {fileID: 11400000, guid: 8113fb9abbde24bfb92cbbe0a1434885, type: 2}

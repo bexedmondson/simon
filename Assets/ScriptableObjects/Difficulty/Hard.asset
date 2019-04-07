@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7af8392c33a453f9c1f49fb254d9d5, type: 3}
   m_Name: Hard
   m_EditorClassIdentifier: 
-  timeBetweenNotes: 0.9
+  timeBetweenNotes: 0.4

@@ -1971,6 +1971,7 @@ GameObject:
   - component: {fileID: 294855601}
   - component: {fileID: 294855600}
   - component: {fileID: 294855603}
+  - component: {fileID: 294855604}
   m_Layer: 5
   m_Name: MediumButton
   m_TagString: Untagged
@@ -2097,7 +2098,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608, type: 2}
   difficultySetting: {fileID: 11400000, guid: 18843898e83dc461f9aa71c526037dd6, type: 2}
+  difficultyChangedEvent: {fileID: 11400000, guid: 98f6fd2c54dec401abe4dbefdd717b3b,
+    type: 2}
   tick: {fileID: 100216223}
+--- !u!114 &294855604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294855598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a4bbab75fe5462e84a04b360fc6f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 98f6fd2c54dec401abe4dbefdd717b3b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 294855603}
+        m_MethodName: UpdateCheckmark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &295786433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,6 +5958,7 @@ GameObject:
   - component: {fileID: 1045759109}
   - component: {fileID: 1045759108}
   - component: {fileID: 1045759111}
+  - component: {fileID: 1045759112}
   m_Layer: 5
   m_Name: HardButton
   m_TagString: Untagged
@@ -6053,7 +6085,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608, type: 2}
   difficultySetting: {fileID: 11400000, guid: e87f63070a4264aa7b24cb67a752509c, type: 2}
+  difficultyChangedEvent: {fileID: 11400000, guid: 98f6fd2c54dec401abe4dbefdd717b3b,
+    type: 2}
   tick: {fileID: 1721953583}
+--- !u!114 &1045759112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045759106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a4bbab75fe5462e84a04b360fc6f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 98f6fd2c54dec401abe4dbefdd717b3b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1045759111}
+        m_MethodName: UpdateCheckmark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1051880514
 GameObject:
   m_ObjectHideFlags: 0
@@ -6210,6 +6272,7 @@ GameObject:
   - component: {fileID: 1118607359}
   - component: {fileID: 1118607358}
   - component: {fileID: 1118607357}
+  - component: {fileID: 1118607361}
   m_Layer: 5
   m_Name: EasyButton
   m_TagString: Untagged
@@ -6250,6 +6313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingHolder: {fileID: 11400000, guid: 20d5bbd04098b454f94844e39ff6f608, type: 2}
   difficultySetting: {fileID: 11400000, guid: 0da78a447124e4df69ba1a5613c2657c, type: 2}
+  difficultyChangedEvent: {fileID: 11400000, guid: 98f6fd2c54dec401abe4dbefdd717b3b,
+    type: 2}
   tick: {fileID: 1002721889}
 --- !u!114 &1118607358
 MonoBehaviour:
@@ -6337,6 +6402,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1118607355}
   m_CullTransparentMesh: 0
+--- !u!114 &1118607361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118607355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a4bbab75fe5462e84a04b360fc6f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 98f6fd2c54dec401abe4dbefdd717b3b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1118607357}
+        m_MethodName: UpdateCheckmark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1140454447
 GameObject:
   m_ObjectHideFlags: 0

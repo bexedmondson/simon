@@ -13,6 +13,9 @@ public class DifficultyButton : MonoBehaviour
 	private DifficultySetting difficultySetting;
 
 	[SerializeField]
+	private GameEvent difficultyChangedEvent;
+
+	[SerializeField]
 	private Image tick;
 
 	public void OnEnable()
@@ -23,7 +26,7 @@ public class DifficultyButton : MonoBehaviour
 	public void OnSelectDifficulty()
 	{
 		settingHolder.setting = difficultySetting;
-		UpdateCheckmark();
+		difficultyChangedEvent.Raise();
 	}
     
 	public void UpdateCheckmark()

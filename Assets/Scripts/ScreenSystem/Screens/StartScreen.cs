@@ -9,9 +9,6 @@ public class StartScreen : Screen
 	[SerializeField]
 	private NoteListEditable sequenceInProgress;
 
-	[SerializeField, Tooltip("This is a holder for the current song. Ignored if in random mode.")]
-    private NoteListReadonlyHolder currentSongHolder;
-
 	[SerializeField]
 	private GameMode gameMode;
 
@@ -29,14 +26,6 @@ public class StartScreen : Screen
 	public void OnRandomStartSelected()
 	{
 		gameMode.currentGameMode = GameMode.GameModeType.Random;
-
-		ScreenManager.Get.SwitchToScreen( tuneScreenType );
-	}
-
-	public void OnSongSelected(NoteListReadonly song)
-	{
-		currentSongHolder.noteList = song;
-		gameMode.currentGameMode = GameMode.GameModeType.Song;      
 
 		ScreenManager.Get.SwitchToScreen( tuneScreenType );
 	}

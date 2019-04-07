@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UISprite
+    uniqueID: 1995785503
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

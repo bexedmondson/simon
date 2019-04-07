@@ -15,6 +15,7 @@ public class SongNoteAdder : NoteAdderBase
 	{
 		if( noteListEditable.NoteListCount == songNoteList.NoteListCount )
 		{
+			noteListEditable.NoteList.Add( Note.C4 ); //Purely for the maths on the results screen, this note isn't used anywhere.
 			return SongFinishedState.Finished;
 		}
 		else

@@ -52,7 +52,12 @@ public class ScreenManager : MonoBehaviour
             Screen inScreen = null;
 
 			foreach( ScreenTypePair screen in screenTypePairs )
-			{            
+			{
+				if( screen.ScreenObject == null )
+				{
+					Debug.LogError( "No screen object found for " + screen.ScreenType.ToString() + "!" );
+				}
+
 				if( screen.ScreenObject.gameObject.activeInHierarchy && screen.ScreenType != screenTypeToSwitchTo )
 				{
                     //Turn off any screens that are on and shouldn't be
